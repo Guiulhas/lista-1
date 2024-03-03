@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int isDivisible(int n, int divisor) {
+    if (divisor <= 1) {
+        return 0;
+    } else if (n % divisor == 0) {
+        return 1;
+    } else {
+        return isDivisible(n, divisor - 1);
+    }
+}
+
+int isPrime(int n) {
+    if (n < 2) {
+        return 0;
+    } else {
+        return !isDivisible(n, (int)sqrt(n));
+    }
+}
+
+int main() {
+    int num;
+
+    printf("Insira um número inteiro: ");
+    scanf("%d", &num);
+
+    if (isPrime(num)) {
+        printf("%d é um número primo.\n", num);
+    } else {
+        printf("%d não é um número primo.\n", num);
+    }
+
+    return 0;
+}
