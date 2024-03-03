@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 5; ++i) {
+        int numero;
+
+        printf("Digite um numero entre 1 e 30: ");
+        scanf("%d", &numero);
+
+        if (numero >= 1 && numero <= 30) {
+            for (int j = 0; j < numero; ++j) {
+                printf("*");
+            }
+            printf("\n");
+        } else {
+            printf("Por favor, insira um numero entre 1 e 30.\n");
+            --i;
+        }
+    }
+    return 0;
+}
