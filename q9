@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int calcularProduto(int x1, int x2) {
+    if (x2 == 0) {
+        return 0;
+    } else {
+        return x1 + calcularProduto(x1, x2 - 1);
+    }
+}
+
+int main() {
+    int x1, x2;
+
+    printf("Insira dois números inteiros (x1 x2): ");
+    scanf("%d %d", &x1, &x2);
+
+    int resultado = calcularProduto(x1, x2);
+    printf("O produto de %d e %d é: %d\n", x1, x2, resultado);
+
+    return 0;
+}
