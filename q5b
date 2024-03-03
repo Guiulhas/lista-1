@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+void calcularRaizesReais(int a, int b, int c) {
+    int discriminante = b * b - 4 * a * c;
+
+    if (discriminante < 0) {
+        printf("A função quadrática não tem raízes reais.\n");
+    } else {
+        double raiz1 = (-b + sqrt(discriminante)) / (2.0 * a);
+        double raiz2 = (-b - sqrt(discriminante)) / (2.0 * a);
+
+        printf("As raízes reais da função quadrática são: %.2lf e %.2lf\n", raiz1, raiz2);
+    }
+}
+
+int main() {
+    int a, b, c;
+
+    printf("Insira os coeficientes da função quadrática (a b c): ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    calcularRaizesReais(a, b, c);
+
+    return 0;
+}
