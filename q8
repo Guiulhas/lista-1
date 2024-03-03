@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int inverteDigitos(int numero) {
+    int resultado = 0;
+
+    while (numero != 0) {
+        resultado = resultado * 10 + numero % 10;
+        numero /= 10;
+    }
+
+    return resultado;
+}
+
+int main() {
+    int valor;
+
+    printf("Insira um número inteiro: ");
+    scanf("%d", &valor);
+
+    int resultado = inverteDigitos(valor);
+    printf("O número invertido é: %d\n", resultado);
+
+    return 0;
+}
